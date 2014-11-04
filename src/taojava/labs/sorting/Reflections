@@ -1,0 +1,32 @@
+/**
+
+	Author : Albert Owusu-Asare
+	Date   : Nov 4 
+	
+	This document contains reflections on the merge sort lab in class
+	http://www.cs.grinnell.edu/~rebelsky/Courses/CSC207/2014F/labs/mergesort.html
+**/
+
+
+EXERCISE 1: Code Reading
+
+a)
+
+According to the documentation online 
+Arrays.copyOfRange is used to copy the specified range of values of 
+some original array into a new array
+
+I think we do this because in each recursive call to sort we want to 
+parse in an array that contains have the range of values of the original
+
+b) The program seems short for two reasons:
+
+1. we have seperated the implementation of merging two sorted arrays together
+from our current implementation. This seperation is the Utils.merge method
+
+2. we are using the magic of recursion and so the perhaps longer form of 
+what we have would be to write code for every step of the entire process.
+Because recursion is simply do something similar again and again, we are able
+to write much shorter code.
+
+c.
