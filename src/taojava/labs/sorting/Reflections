@@ -29,4 +29,12 @@ what we have would be to write code for every step of the entire process.
 Because recursion is simply do something similar again and again, we are able
 to write much shorter code.
 
-c.
+c. created see ExperimentalClass
+d. if the Utils.merge function works like it should then yes
+e. It did not work. Checked Utils.merge to make sure its working like should
+    Utils.merge is just a stub
+ 
+ EXERCISE 2: Implementing merge.
+ 
+ 
+ 

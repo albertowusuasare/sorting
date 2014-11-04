@@ -97,7 +97,7 @@ class Utils
   {
     // Create the new array for the merged values.
     T[] result = (T[]) new Object[(ub1 - lb1) + (ub2 - lb2)];
-    // And merge
+    
     return merge(order, a1, lb1, ub1, a2, lb2, ub2, result, 0, result.length);
   } // merge(Comparator<T>, T[], int, int, T[], int, int)
 
@@ -134,7 +134,45 @@ class Utils
                               T[] a2, int lb2, int ub2, T[] merged, int lbm,
                               int ubm)
   {
-    // STUB
+  
+int resultCursor = lbm; //stores the index at which we should store values in result
+    
+    // And merge
+    while(lb1 <ub1 && lb2 < ub2
+        && resultCursor < ubm){
+          
+         
+          // get the values at the current position for both a1 and a2
+          T aValue = a1[lb1];
+          T bValue = a2[lb2]; 
+          
+          if(order.compare(aValue, bValue) <= 0){
+            merged[resultCursor] = aValue;
+            lb1++;
+          }//if the value in a < value in b
+          else {
+            merged[resultCursor] = bValue;
+            lb2++;
+          }
+          resultCursor++;
+        }// while
+    
+    if( (lb1>=ub1) &&( lb2 <ub2)){
+      while(lb2<ub2){
+      T bValue = a2[lb2];
+      merged[resultCursor] = bValue;
+      lb2++;
+      resultCursor++;
+      }//while lb2 < ub2
+    }
+    else {
+      while(lb1<ub1){
+        T aValue = a1[lb1];
+        merged[resultCursor] = aValue;
+        lb1++;
+        resultCursor++;
+        }//while lb2 < ub2
+    }
     return merged;
   } // merge(Comparator<T>, T[], int, int, T[], int, int)
 
